@@ -3,10 +3,13 @@ import { BG_IMG_URL } from "../../utils/images";
 import Header from "../Header";
 import Login from "../Forms/Login";
 import Signin from "./Signin";
+import { useDispatch, useSelector } from "react-redux";
+import { changeForm } from "../../redux/slices/formTypeSlice";
 
 function LandingPage() {
-  const [FormType, setFormType] = useState(true);
   const [logbut, setlogbut] = useState(false);
+  const FormType = useSelector((state) => state.form.formType);
+  const Dispach = useDispatch();
 
   return (
     <div>
@@ -30,7 +33,7 @@ function LandingPage() {
                 {FormType ? "New to Netflix?" : "Already User"}
                 <span
                   className="cursor-pointer ml-2 font-semibold"
-                  onClick={() => setFormType((pre) => !pre)}
+                  onClick={() => Dispach(changeForm())}
                 >
                   {FormType ? "Create an account" : "Log in"}
                 </span>

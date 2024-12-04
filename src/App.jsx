@@ -7,9 +7,9 @@ import AllowtoDashbord from "./routes/allowtoDashbord";
 import DashbordToLanding from "./routes/DashbordToLanding";
 import DashbordToVisit from "./routes/DashbordToVisit";
 import { useSelector } from "react-redux";
+
 function App() {
-  const user = useSelector((store) => store.user);
-  const check = user.success;
+  const check = useSelector((state) => state.user.userInfo.success);
 
   return (
     <div className="border border-black">

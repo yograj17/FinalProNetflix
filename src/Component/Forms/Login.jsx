@@ -6,6 +6,7 @@ import { addUser } from "../../redux/slices/userSlice";
 
 function Login() {
   const [LoginData, setLogindata] = useState({ username: "", password: "" });
+  const Dispach = useDispatch();
 
   const loginHandler = (e) => {
     const { name, value } = e.target;
@@ -14,6 +15,7 @@ function Login() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    Dispach(addUser(true));
   };
 
   return (

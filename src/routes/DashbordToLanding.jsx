@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 function DashbordToLanding({ children, check }) {
   const Navigate = useNavigate();
+
   useEffect(() => {
     if (check) {
       Navigate("/dashbord");

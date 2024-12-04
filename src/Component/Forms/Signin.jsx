@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../../redux/slices/userSlice";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Signin() {
@@ -10,21 +8,6 @@ function Signin() {
     setpassword: "",
   });
 
-  const dispatch = useDispatch();
-  const user = useSelector((store) => store.user);
-
-  const userRegstation = async () => {
-    const response = await fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(SigninData),
-    });
-    const ok = await response.json();
-    dispatch(addUser(ok));
-  };
-
   const signinHandler = (e) => {
     const { name, value } = e.target;
     setSigninData((pre) => ({ ...pre, [name]: value }));
@@ -32,7 +15,6 @@ function Signin() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    userRegstation();
   };
 
   return (
