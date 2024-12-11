@@ -4,9 +4,6 @@ const Footer = () => {
   return (
     <div className="bg-black text-white py-7 px-32">
       <div className="flex flex-col gap-6">
-        <div className="bg-red-600 h-14 m-auto w-80 flex items-center justify-center rounded-xl font-semibold text-lg cursor-pointer">
-          Wait For Chess Game
-        </div>
         <div className="text-xl">
           Questions? Call
           <span className="cursor-pointer underline">000-800-919-1694</span>

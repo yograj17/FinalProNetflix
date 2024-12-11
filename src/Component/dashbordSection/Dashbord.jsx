@@ -1,19 +1,15 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { removeUser } from "../../redux/slices/userSlice";
+import HeroSection from "./HeroSection";
+import AllMoviesList from "./AllMoviesList";
+import Footer from "../visitSection/Footer";
+import useTVShow from "../../hooks/useTVShow";
 
 function Dashbord() {
-  const Dispach = useDispatch();
-
   return (
-    <div>
-      Dashbord
-      <div
-        className="border border-black"
-        onClick={() => Dispach(removeUser(false))}
-      >
-        Log Out
-      </div>
+    <div className="h-screen bg-black text-white">
+      <HeroSection />
+      <AllMoviesList />
+      <Footer />
     </div>
   );
 }

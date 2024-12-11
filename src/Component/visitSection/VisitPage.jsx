@@ -6,8 +6,15 @@ import Options from "./Options";
 import Question from "./Question";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import useScreening from "../../hooks/useScreening";
+import { useSelector } from "react-redux";
+import useTVShow from "../../hooks/useTVShow";
 
 function VisitPage() {
+  useScreening(4);
+  const moviesData = useSelector((state) => state.visitMovies.visitmovies);
+  useTVShow();
+
   const [logbut, setlogbut] = useState(true);
   return (
     <div className="no-scrollbar scroll-smooth">
@@ -48,7 +55,7 @@ function VisitPage() {
         </div>
       </div>
       <div>
-        <Movies />
+        <Movies movies={moviesData} />
         <Options />
         <Question />
         <Footer />

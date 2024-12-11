@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function DashbordToLanding({ children, check }) {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
+
     if (check) {
-      Navigate("/dashbord");
+      navigate("/dashbord");
     }
-  }, [check, Navigate]);
+  }, [check, navigate]);
   return check ? null : children;
 }
 
