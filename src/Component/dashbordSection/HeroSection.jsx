@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import useMovies from "../../hooks/useMovies";
 import { useDispatch, useSelector } from "react-redux";
-import { AddMoviesInfo } from "../../redux/slices/moviesvideoSlice";
+import {
+  AddMoviesInfo,
+  AddMoviesVideo,
+} from "../../redux/slices/moviesvideoSlice";
 import useMoviesDataFetch from "../../hooks/useMoviesDataFetch";
+import Shimmer from "../visitSection/Shimmer";
 import {
   AddNowPlayingData,
   AddPopularData,
@@ -14,7 +18,6 @@ import {
 
 const HeroSection = () => {
   const Dispach = useDispatch();
-
   useMoviesDataFetch("movie", "popular", AddPopularData, 1, true);
   useMoviesDataFetch("movie", "top_rated", AddTopratedData, 1, false);
   useMoviesDataFetch("movie", "now_playing", AddNowPlayingData, 2, false);
@@ -22,21 +25,24 @@ const HeroSection = () => {
   useMoviesDataFetch("tv", "top_rated", AddTvShowmainData, 1, false);
 
   const screenigData = useSelector((state) => state.moviesData.screeningData);
+
   const TrailerVideos = useSelector((state) => state.moviesVideo.moviesVideo);
   const MoviesInfo = useSelector((state) => state.moviesVideo.moviesInfo);
 
   const [MovieId, setMovieId] = useState(402431);
+  const [shimmer, setShimmer] = useState(false);
 
   useEffect(() => {
     if (screenigData?.results?.length > 0) {
       setMovieId(screenigData.results[0].id);
       Dispach(AddMoviesInfo(screenigData?.results[0]));
     }
-  }, [screenigData?.results]);
+    setShimmer(true);
+  }, [screenigData?.results, shimmer]);
 
-  useMovies(MovieId);
+  useMovies(MovieId, AddMoviesVideo);
 
-  return (
+  return shimmer ? (
     <div className=" aspect-video relative">
       <Navbar />
       <div className="h-full w-full relative">
@@ -81,7 +87,7 @@ const HeroSection = () => {
             return (
               <div
                 key={key.id}
-                className="cursor-pointer bg-lime-700 h-72 w-44 inline-block mr-12 bg-cover bg-center opacity-90 rounded-xl"
+                className="cursor-pointer bg-slate-500 h-72 w-44 inline-block mr-12 bg-cover bg-center opacity-90 rounded-xl"
                 onClick={() => {
                   setMovieId(key.id);
                   Dispach(AddMoviesInfo(key));
@@ -95,6 +101,8 @@ const HeroSection = () => {
         </div>
       </div>
     </div>
+  ) : (
+    <Shimmer />
   );
 };
 
