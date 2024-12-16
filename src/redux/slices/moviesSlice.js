@@ -6,8 +6,9 @@ const moviesSlice = createSlice({
     screeningData: {},
     nowPlyingData: {},
     populatData: {},
+    TvShowmain: {},
     topratedData: {},
-    upcommingData: {},
+    upcomingData: {},
   },
   reducers: {
     AddScreeningData: (state, action) => {
@@ -22,8 +23,11 @@ const moviesSlice = createSlice({
     AddTopratedData: (state, action) => {
       state.topratedData = action.payload;
     },
-    AddUpcommingData: (state, action) => {
-      state.upcommingData = action.payload;
+    AddupcomingData: (state, action) => {
+      state.upcomingData = action.payload;
+    },
+    AddTvShowmainData: (state, action) => {
+      state.TvShowmain = action.payload;
     },
   },
 });
@@ -32,8 +36,9 @@ export const {
   AddScreeningData,
   AddNowPlayingData,
   AddPopularData,
+  AddTvShowmainData,
   AddTopratedData,
-  AddUpcommingData,
+  AddupcomingData,
 } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

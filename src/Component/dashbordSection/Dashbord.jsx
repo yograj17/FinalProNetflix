@@ -2,7 +2,6 @@ import React from "react";
 import HeroSection from "./HeroSection";
 import AllMoviesList from "./AllMoviesList";
 import Footer from "../visitSection/Footer";
-import useTVShow from "../../hooks/useTVShow";
 
 function Dashbord() {
   return (

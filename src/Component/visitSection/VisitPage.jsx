@@ -6,14 +6,20 @@ import Options from "./Options";
 import Question from "./Question";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import useScreening from "../../hooks/useScreening";
 import { useSelector } from "react-redux";
-import useTVShow from "../../hooks/useTVShow";
+import useMoviesDataFetch from "../../hooks/useMoviesDataFetch";
+import {
+  AddMovies,
+  AddTvShow,
+  AddVisitmovies,
+} from "../../redux/slices/visitMoviesSlice";
 
 function VisitPage() {
-  useScreening(4);
+  useMoviesDataFetch("movie", "now_playing", AddMovies, 2, false);
+  useMoviesDataFetch("movie", "now_playing", AddVisitmovies, 2, false);
+  useMoviesDataFetch("tv", "top_rated", AddTvShow, 1, false);
+
   const moviesData = useSelector((state) => state.visitMovies.visitmovies);
-  useTVShow();
 
   const [logbut, setlogbut] = useState(true);
   return (

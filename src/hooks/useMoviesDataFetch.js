@@ -1,29 +1,27 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { AddTvShow } from "../redux/slices/visitMoviesSlice";
+import { AddScreeningData } from "../redux/slices/moviesSlice";
 
-const useTVShow = () => {
+const useMoviesDataFetch = (movieType, type, AddActions, page, check) => {
   const Dispach = useDispatch();
-  const MoiesData = async () => {
+  const movieData = async () => {
+    const url = `https://api.themoviedb.org/3/${movieType}/${type}?language=en-US&page=${page}`;
     const options = {
       method: "GET",
       headers: {
-        accept: "application/json",
+        Accept: "application/json",
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNGI3MTRlZjJjMjUwYmQ5MTUwMzk3OWQzNTM1NzY2OCIsIm5iZiI6MTcyOTc0NjQ1MS4wNzYsInN1YiI6IjY3MTlkNjEzNWJlOWU4NzU5ZGE2ZGU0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wEsJSrnO8St4cDo9CAOzTGpQRJt00i4SW5Db7duUPUo",
       },
     };
-
-    const data = await fetch(
-      "https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc",
-      options
-    );
+    const data = await fetch(url, options);
     const response = await data.json();
-    Dispach(AddTvShow(response));
+    Dispach(AddActions(response));
+    check ? Dispach(AddScreeningData(response)) : false;
   };
   useEffect(() => {
-    MoiesData();
+    movieData();
   }, []);
 };
 
-export default useTVShow;
+export default useMoviesDataFetch;

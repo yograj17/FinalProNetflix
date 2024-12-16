@@ -27,7 +27,7 @@ function Movies({ movies }) {
   };
 
   return (
-    <div className="bg-black text-white py-7 px-32 flex flex-col gap-6">
+    <div className="bg-black text-white py-7  px-32 flex flex-col gap-6">
       <div className="text-3xl font-semibold">Trending Now</div>
       <div className="text-lg font-semibold flex gap-4">
         <select
