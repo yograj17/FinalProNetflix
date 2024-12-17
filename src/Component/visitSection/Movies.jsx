@@ -132,12 +132,18 @@ function Movies({ movies }) {
                 <div className="h-32 bg-gradient-to-b from-black via-black"></div>
                 <div className="h-32 bg-gradient-to-t from-black via-black"></div>
               </div>
-              <iframe
-                className="h-full border-2 aspect-video bg-gray-950 z-0 rounded"
-                src={`https://www.youtube.com/embed/${trailer}?autoplay=1&mute=1`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
+              {trailer ? (
+                <iframe
+                  className="h-full border-2 aspect-video bg-gray-950 z-0 rounded"
+                  src={`https://www.youtube.com/embed/${trailer}?autoplay=1&mute=1`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                ></iframe>
+              ) : (
+                <div className="h-full border-2 aspect-video bg-gray-950 z-0 rounded flex justify-center items-center text-white font-bold text-3xl">
+                  Trailer Not Available
+                </div>
+              )}
             </div>
           </div>
         </>

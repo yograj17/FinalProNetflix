@@ -2,9 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import AllMoviesListCard from "./AllMoviesListCard";
 import { AddScreeningData } from "../../redux/slices/moviesSlice";
+import { useNavigate } from "react-router-dom";
+import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 const AllMoviesList = () => {
   const Dispach = useDispatch();
+  const Naviget = useNavigate();
   const NowPlayingMoviesData = useSelector(
     (state) => state.moviesData.nowPlyingData
   );
@@ -26,8 +29,18 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className=" text-2xl font-bold mb-8 flex flex-col gap-2">
-            Now Playing Movies <span className="border-2"></span>
+          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+            Now Playing Movies
+            <span
+              className=""
+              onClick={() => {
+                Naviget("/moreMovies", {
+                  state: { type: "now_playing", allow: true },
+                });
+              }}
+            >
+              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+            </span>
           </div>
 
           <div
@@ -52,8 +65,18 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className="text-2xl font-bold mb-8 flex flex-col gap-2">
-            Popular Movies <span className="border-2"></span>
+          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+            Popular Movies
+            <span
+              className=""
+              onClick={() => {
+                Naviget("/moreMovies", {
+                  state: { type: "popular", allow: true },
+                });
+              }}
+            >
+              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+            </span>
           </div>
           <div
             className="whitespace-nowrap overflow-x-scroll scrollbar-hide "
@@ -76,8 +99,18 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className="text-2xl font-bold mb-8 flex flex-col gap-2">
-            Top Rated Movies<span className="border-2"></span>
+          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+            Top Rated Movies
+            <span
+              className=""
+              onClick={() => {
+                Naviget("/moreMovies", {
+                  state: { type: "top_rated", allow: true },
+                });
+              }}
+            >
+              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+            </span>
           </div>
           <div
             className="whitespace-nowrap overflow-x-scroll scrollbar-hide "
@@ -100,8 +133,18 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className="text-2xl font-bold mb-8 flex flex-col gap-2">
-            Upcoming Movies<span className="border-2"></span>
+          <div className=" text-2xl font-bold mb-8 gap-2  flex justify-between">
+            Upcoming Movies
+            <span
+              className=""
+              onClick={() => {
+                Naviget("/moreMovies", {
+                  state: { type: "upcoming", allow: true },
+                });
+              }}
+            >
+              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+            </span>
           </div>
           <div
             className="whitespace-nowrap overflow-x-scroll scrollbar-hide "
@@ -124,8 +167,9 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className="text-2xl font-bold mb-8 flex flex-col gap-2">
-            Tv Show Movies<span className="border-2"></span>
+          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+            Tv Show Movies
+            {/* <span className="border-2"></span> */}
           </div>
           <div
             className="whitespace-nowrap overflow-x-scroll scrollbar-hide "

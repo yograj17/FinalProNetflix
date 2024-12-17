@@ -21,7 +21,7 @@ const useMoviesDataFetch = (movieType, type, AddActions, page, check) => {
   };
   useEffect(() => {
     movieData();
-  }, []);
+  }, [page]);
 };
 
 export default useMoviesDataFetch;

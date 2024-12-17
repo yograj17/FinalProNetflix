@@ -47,16 +47,22 @@ const HeroSection = () => {
       <Navbar />
       <div className="h-full w-full relative">
         <div className="absolute inset-0 z-0">
-          <iframe
-            className="h-full w-full bg-gray-950"
-            src={`https://www.youtube.com/embed/${TrailerVideos}?autoplay=1&mute=1&si=8nX64edJ7WcNUREv`}
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
+          {TrailerVideos ? (
+            <iframe
+              className="h-full w-full bg-gray-950"
+              src={`https://www.youtube.com/embed/${TrailerVideos}?autoplay=1&mute=1&si=8nX64edJ7WcNUREv`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+          ) : (
+            <div className="h-full w-full z-40 flex justify-center items-center text-5xl font-bold">
+              Trailer Not Available
+            </div>
+          )}
         </div>
 
         <div className="absolute inset-0 z-10 flex justify-center items-center bg-transparent">
-          <div className=" bg-gray-950 text-white h-full w-full bg-opacity-65 flex pt-60 pl-32">
+          <div className=" bg-gray-950 text-white h-full w-full bg-opacity-60 flex pt-60 pl-32">
             <div className=" h-60 w-1/2 flex flex-col gap-4 opacity-90">
               <div className="text-6xl font-bold">
                 {MoviesInfo?.original_title}

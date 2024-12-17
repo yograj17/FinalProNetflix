@@ -7,6 +7,7 @@ import AllowtoDashbord from "./routes/AllowtoDashbord";
 import DashbordToLanding from "./routes/DashbordToLanding";
 import DashbordToVisit from "./routes/DashbordToVisit";
 import { useSelector } from "react-redux";
+import MoreMovies from "./Component/dashbordSection/MoreMovies";
 
 function App() {
   const check = useSelector((state) => state.user.userInfo.success);
@@ -36,6 +37,14 @@ function App() {
             <AllowtoDashbord check={check}>
               <Dashbord />
             </AllowtoDashbord>
+          }
+        />
+        <Route
+          path="/moreMovies"
+          element={
+            // <AllowtoDashbord check={check}>
+            <MoreMovies />
+            // </AllowtoDashbord>
           }
         />
       </Routes>

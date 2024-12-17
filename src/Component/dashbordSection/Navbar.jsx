@@ -23,6 +23,7 @@ const Navbar = () => {
             onClick={() => {
               Dispach(AddScreeningData(NowPlayingMoviesData));
             }}
+            className="hover:underline"
           >
             NowPlaying
           </div>
@@ -30,6 +31,7 @@ const Navbar = () => {
             onClick={() => {
               Dispach(AddScreeningData(PopularMovies));
             }}
+            className="hover:underline"
           >
             Popular
           </div>
@@ -37,6 +39,7 @@ const Navbar = () => {
             onClick={() => {
               Dispach(AddScreeningData(TopRatedData));
             }}
+            className="hover:underline"
           >
             TopRated
           </div>
@@ -44,6 +47,7 @@ const Navbar = () => {
             onClick={() => {
               Dispach(AddScreeningData(UpcomingData));
             }}
+            className="hover:underline"
           >
             Upcoming
           </div>
@@ -51,6 +55,7 @@ const Navbar = () => {
             onClick={() => {
               Dispach(AddScreeningData(TvShowmainData));
             }}
+            className="hover:underline"
           >
             TvShow
           </div>
