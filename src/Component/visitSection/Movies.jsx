@@ -108,7 +108,7 @@ function Movies({ movies }) {
           ></div>
 
           <div
-            className="fixed z-20 h-[34%]  bg-white flex items-center justify-center rounded-lg shadow-lg"
+            className="fixed z-20 h-[30%]  bg-white flex items-center justify-center rounded-lg shadow-lg"
             style={{
               top: "50%",
               left: "50%",
