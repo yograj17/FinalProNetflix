@@ -20,10 +20,11 @@ function VisitPage() {
   useMoviesDataFetch("tv", "top_rated", AddTvShow, 1, false);
 
   const moviesData = useSelector((state) => state.visitMovies.visitmovies);
-
   const [logbut, setlogbut] = useState(true);
+
   return (
     <div className="no-scrollbar scroll-smooth">
+      {/* Background Section */}
       <div
         style={{
           backgroundImage: `url(${BG_IMG_URL})`,
@@ -32,19 +33,19 @@ function VisitPage() {
         }}
         className="h-screen"
       >
-        <div className="h-full w-full bg-black bg-opacity-80">
+        <div className="h-full w-full bg-black bg-opacity-80 border">
           <Header logbut={logbut} />
           <div className="text-white h-4/5 flex justify-center items-center">
-            <div className="h-4/5 w-2/5  flex flex-col justify-center items-center gap-6">
-              <div className="text-6xl font-bold flex flex-col justify-center items-center">
+            <div className="border w-full sm:w-3/4 md:w-1/2 lg:w-1/3 px-5 sm:px-8">
+              <div className="flex flex-col justify-center items-center text-3xl font-bold mb-4 sm:mb-6">
                 <div>Unlimited movies,</div>
                 <div>TV shows and more</div>
               </div>
-              <div className="text-lg font-semibold">
+              <div className="font-semibold flex justify-center items-center mb-6">
                 <div>Starts at ₹149. Cancel at any time.</div>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className="text-lg">
+              <div className="flex flex-col px-8">
+                <div className="mb-4">
                   Ready to watch? Enter your email to create or restart your
                   membership.
                 </div>
@@ -60,6 +61,8 @@ function VisitPage() {
           </div>
         </div>
       </div>
+
+      {/* Movie Data Section */}
       <div>
         <Movies movies={moviesData} />
         <Options />

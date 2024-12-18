@@ -4,20 +4,20 @@ import { Link } from "react-router-dom";
 
 function Header({ logbut }) {
   return (
-    <div className="text-white h-1/5 flex items-center justify-between px-28">
+    <div className="border text-white h-24 flex justify-between items-center px-6">
       <Link to={"/"}>
-        <div className="h-20">
+        <div className="h-12">
           <img src={LOGO_URL} className="h-full w-full cursor-pointer" />
         </div>
       </Link>
 
       {logbut ? (
-        <div className="flex gap-6">
-          <div className="border border-gray-600 h-10 w-28 flex justify-center items-center cursor-pointer rounded-lg font-semibold bg-white bg-opacity-20">
+        <div className="flex justify-center items-center gap-3">
+          <div className="border border-gray-600  cursor-pointer  bg-white bg-opacity-20 h-8 w-20 flex justify-center items-center rounded-md">
             Language
           </div>
           <Link to={"/login"}>
-            <div className="h-10 w-28 flex justify-center items-center cursor-pointer rounded-lg font-semibold bg-red-600">
+            <div className="cursor-pointer bg-red-600 h-8 w-14 flex justify-center items-center font-semibold rounded-md text-sm">
               Log In
             </div>
           </Link>
