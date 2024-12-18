@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Header({ logbut }) {
   return (
-    <div className="border text-white h-24 flex justify-between items-center px-6">
+    <div className="text-white h-24 flex justify-between items-center px-6">
       <Link to={"/"}>
         <div className="h-12">
           <img src={LOGO_URL} className="h-full w-full cursor-pointer" />

@@ -23,7 +23,7 @@ function VisitPage() {
 
   const [logbut, setlogbut] = useState(true);
   return (
-    <div className="no-scrollbar scroll-smooth border bg-black h-screen">
+    <div className="no-scrollbar scroll-smooth bg-black ">
       <div
         style={{
           backgroundImage: `url(${BG_IMG_URL})`,
@@ -32,25 +32,25 @@ function VisitPage() {
         }}
         className="h-screen"
       >
-        <div className="h-full w-full bg-black bg-opacity-80 border">
+        <div className="h-full w-full bg-black bg-opacity-80">
           <Header logbut={logbut} />
           <div className="text-white h-4/5 flex justify-center items-center">
-            <div className="border">
-              <div className="border flex flex-col justify-center items-center text-3xl font-bold">
-                <div className="border">Unlimited movies,</div>
-                <div className="border">TV shows and more</div>
+            <div className=" flex flex-col gap-4">
+              <div className=" flex flex-col justify-center items-center text-4xl font-bold">
+                <div className="">Unlimited movies,</div>
+                <div className="">TV shows and more</div>
               </div>
-              <div className="border font-semibold flex justify-center items-center">
+              <div className=" font-semibold flex justify-center items-center">
                 <div className="">Starts at ₹149. Cancel at any time.</div>
               </div>
-              <div className="border flex flex-col justify-center items-center">
-                <div className="border">
+              <div className=" flex flex-col justify-center items-center px-10 gap-12">
+                <div className="">
                   Ready to watch? Enter your email to create or restart your
                   membership.
                 </div>
                 <div className="flex justify-center items-center">
                   <Link to={"/login"}>
-                    <div className="h-12 w-80 flex justify-center items-center text-xl font-semibold cursor-pointer rounded-lg bg-red-600">
+                    <div className="h-12 w-44 flex justify-center items-center text-lg font-semibold cursor-pointer rounded-lg bg-red-600">
                       Get Started
                     </div>
                   </Link>
