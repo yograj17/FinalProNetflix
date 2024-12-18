@@ -21,11 +21,11 @@ function LandingPage() {
         }}
         className="h-screen"
       >
-        <div className="h-full w-full bg-black bg-opacity-60">
+        <div className="h-full w-full bg-black bg-opacity-80">
           <Header logbut={logbut} />
           <div className="text-white h-4/5 flex justify-center items-end">
-            <div className="h-full w-1/3 bg-black bg-opacity-75 rounded-3xl px-24 py-16 flex flex-col gap-6">
-              <div className="text-4xl font-bold">
+            <div className="h-full w-3/4 bg-black bg-opacity-75 rounded-xl  flex flex-col gap-4 p-10">
+              <div className="text-2xl font-bold">
                 {FormType ? "Log In" : "Create Account"}
               </div>
               {FormType ? <Login /> : <Signin />}

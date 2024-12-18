@@ -25,19 +25,19 @@ function Login() {
           type="text"
           placeholder="Username"
           name="username"
-          className="h-12 w-full rounded-lg pl-4 bg-white bg-opacity-20"
+          className="h-10 w-full rounded-lg pl-4 bg-white bg-opacity-20"
           onChange={loginHandler}
         />
         <input
           type="password"
           placeholder="Password"
           name="password"
-          className="h-12 w-full rounded-lg pl-4 bg-white bg-opacity-20"
+          className="h-10 w-full rounded-lg pl-4 bg-white bg-opacity-20"
           onChange={loginHandler}
         />
 
         <button
-          className="h-12  text-lg font-semibold rounded-lg bg-red-600"
+          className="h-10  text-lg font-semibold rounded-lg bg-red-600"
           onClick={submitHandler}
         >
           <Link
