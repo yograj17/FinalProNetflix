@@ -15,10 +15,10 @@ const Navbar = () => {
   const TopRatedData = useSelector((state) => state.moviesData.topratedData);
   const TvShowmainData = useSelector((state) => state.moviesData.TvShowmain);
   return (
-    <div className="h-32 w-full absolute bg-gradient-to-b from-gray-950 via-gray-950 z-20 flex justify-between px-32  items-center">
-      <div className="h-20 w-44 flex gap-12">
+    <div className=" h-28 w-full absolute bg-gradient-to-b from-gray-950 via-gray-950 z-20 flex justify-between items-center px-6 ">
+      <div className="h-12  flex gap-12">
         <img src={LOGO_URL} className="h-full w-full cursor-pointer" />
-        <div className="flex justify-center items-center gap-12 text-xl font-semibold cursor-pointer">
+        {/* <div className="flex justify-center items-center gap-12 text-xl font-semibold cursor-pointer">
           <div
             onClick={() => {
               Dispach(AddScreeningData(NowPlayingMoviesData));
@@ -59,10 +59,10 @@ const Navbar = () => {
           >
             TvShow
           </div>
-        </div>
+        </div> */}
       </div>
       <div
-        className="border cursor-pointer"
+        className=" cursor-pointer bg-red-600 font-semibold h-8 w-20 rounded-md text-sm flex justify-center items-center"
         onClick={() => {
           Dispach(removeUser(false));
         }}

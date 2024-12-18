@@ -7,8 +7,8 @@ function Dashbord() {
   return (
     <div className="h-screen bg-black text-white">
       <HeroSection />
-      <AllMoviesList />
-      <Footer />
+      {/* <AllMoviesList />
+      <Footer /> */}
     </div>
   );
 }

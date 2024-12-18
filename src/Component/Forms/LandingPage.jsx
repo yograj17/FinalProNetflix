@@ -24,7 +24,7 @@ function LandingPage() {
         <div className="h-full w-full bg-black bg-opacity-80">
           <Header logbut={logbut} />
           <div className="text-white h-4/5 flex justify-center items-end">
-            <div className="h-full w-3/4 bg-black bg-opacity-75 rounded-xl  flex flex-col gap-4 p-10">
+            <div className="h-full w-3/4 bg-black bg-opacity-75 rounded-xl  flex flex-col gap-4 p-8">
               <div className="text-2xl font-bold">
                 {FormType ? "Log In" : "Create Account"}
               </div>
@@ -32,7 +32,7 @@ function LandingPage() {
               <div>
                 {FormType ? "New to Netflix?" : "Already User"}
                 <span
-                  className="cursor-pointer ml-2 font-semibold"
+                  className="cursor-pointer ml-2 font-semibold text-blue-800"
                   onClick={() => Dispach(changeForm())}
                 >
                   {FormType ? "Create an account" : "Log in"}

@@ -43,13 +43,13 @@ const HeroSection = () => {
   useMovies(MovieId, AddMoviesVideo);
 
   return shimmer ? (
-    <div className=" aspect-video relative">
+    <div className="h-80 relative">
       <Navbar />
       <div className="h-full w-full relative">
         <div className="absolute inset-0 z-0">
           {TrailerVideos ? (
             <iframe
-              className="h-full w-full bg-gray-950"
+              className="h-full w-full bg-gray-950 border"
               src={`https://www.youtube.com/embed/${TrailerVideos}?autoplay=1&mute=1&si=8nX64edJ7WcNUREv`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -62,17 +62,17 @@ const HeroSection = () => {
         </div>
 
         <div className="absolute inset-0 z-10 flex justify-center items-center bg-transparent">
-          <div className=" bg-gray-950 text-white h-full w-full bg-opacity-60 flex pt-60 pl-32">
-            <div className=" h-60 w-1/2 flex flex-col gap-4 opacity-90">
-              <div className="text-6xl font-bold">
+          <div className="bg-gray-950 text-white h-full w-full bg-opacity-40 flex  relative">
+            <div className="flex flex-col gap-1 opacity-90 absolute bottom-0 bg-gradient-to-t from-gray-950 via-gray-950 p-4">
+              <div className="text-2xl font-extrabold">
                 {MoviesInfo?.original_title}
               </div>
-              <div className="text-lg">{MoviesInfo?.overview}</div>
-              <div className=" flex gap-4">
-                <div className="border cursor-pointer h-12 w-24 flex justify-center items-center text-xl font-bold rounded-xl bg-white text-black">
+              <div className="h-12 overflow-hidden">{MoviesInfo?.overview}</div>
+              <div className=" flex gap-2">
+                <div className="border cursor-pointer h-8 w-20 flex justify-center items-center font-bold rounded-md bg-white text-black">
                   Play
                 </div>
-                <div className="border cursor-pointer h-12 w-24 flex justify-center items-center text-xl font-bold rounded-xl">
+                <div className="border cursor-pointer h-8 w-20 flex justify-center items-center font-bold rounded-md">
                   Info
                 </div>
               </div>
@@ -81,8 +81,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="z-10 absolute -bottom-28 w-full h-86 px-28 pb-8  bg-gradient-to-t from-gray-950 via-gray-950 ">
-        <div className="text-2xl font-semibold mb-4">Explore New Movies</div>
+      <div className="z-10 absolute -bottom-60 w-full h-60 py-2 px-4 flex flex-col gap-2">
+        <div className=" font-semibold text-xl">Explore New Movies</div>
         <div
           className="h-full w-full whitespace-nowrap overflow-x-scroll scrollbar-hide "
           style={{
@@ -93,7 +93,7 @@ const HeroSection = () => {
             return (
               <div
                 key={key.id}
-                className="cursor-pointer bg-slate-500 h-72 w-44 inline-block mr-12 bg-cover bg-center opacity-90 rounded-xl"
+                className="border cursor-pointer bg-slate-500 h-44 w-32 inline-block mr-4 bg-cover bg-center opacity-90 rounded-xl"
                 onClick={() => {
                   setMovieId(key.id);
                   Dispach(AddMoviesInfo(key));
