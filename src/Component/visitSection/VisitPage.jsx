@@ -64,7 +64,7 @@ function VisitPage() {
         <Movies movies={moviesData} />
         <Options />
         <Question />
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </div>
   );
