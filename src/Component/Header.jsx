@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 
 function Header({ logbut }) {
   return (
-    <div className="text-white h-24 flex justify-between items-center px-6">
+    <div className=" text-white h-24 flex justify-between items-center px-6">
       <Link to={"/"}>
-        <div className="h-12">
+        <div className=" h-12">
           <img src={LOGO_URL} className="h-full w-full cursor-pointer" />
         </div>
       </Link>
 
       {logbut ? (
         <div className="flex justify-center items-center gap-3">
-          <div className="border border-gray-600  cursor-pointer  bg-white bg-opacity-20 h-8 w-20 flex justify-center items-center rounded-md">
+          <div className="border border-gray-600  cursor-pointer  bg-white bg-opacity-20 h-8 w-20 flex justify-center items-center rounded-lg">
             Language
           </div>
           <Link to={"/login"}>
