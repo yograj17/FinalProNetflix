@@ -37,19 +37,19 @@ function Movies({ movies }) {
   };
 
   return (
-    <div className="bg-black text-white  relative">
+    <div className=" bg-black text-white  relative">
       {/* Dimmed background when modal is visible */}
       <div
-        className={`py-7 px-32 flex flex-col gap-6 transition-opacity duration-300 ${
+        className={`py-6  mx-6 flex flex-col gap-4 transition-opacity duration-300 ${
           isModalVisible ? "opacity-50 pointer-events-none" : "opacity-100"
         }`}
       >
-        <div className="text-3xl font-semibold">Trending Now</div>
-        <div className="text-lg font-semibold flex gap-4">
+        <div className=" font-semibold text-xl">Trending Now</div>
+        <div className=" flex gap-4">
           <select
             id="dropdown"
             name="options"
-            className="h-10 w-36 block px-2 border bg-white bg-opacity-10 text-white rounded-md"
+            className="h-9 w-36 block px-2 border bg-white bg-opacity-10 text-white rounded-md"
           >
             <option value="option1" className="text-black">
               India
@@ -64,7 +64,7 @@ function Movies({ movies }) {
           <select
             id="dropdown"
             name="options"
-            className="h-10 block w-36 px-2 border bg-white bg-opacity-10 text-white rounded-md"
+            className="h-9 block w-36 px-2 border bg-white bg-opacity-10 text-white rounded-md"
             onChange={handleSelectChange}
           >
             <option value="option1" className="text-black">
@@ -85,39 +85,33 @@ function Movies({ movies }) {
           >
             {movies?.results?.map((key, index) => (
               <span
-                className="inline-block ml-4 mr-12 relative"
+                className="inline-block mr-4 relative"
                 key={index}
                 onClick={() => showTrailerHandler(key)}
               >
                 <img
-                  className="h-64 rounded-2xl hover:scale-95 transition duration-300 cursor-pointer"
+                  className="h-48 border rounded-2xl hover:scale-95 transition duration-300 cursor-pointer"
                   src={`https://image.tmdb.org/t/p/original/${key.poster_path}`}
                   alt={`Movie ${index + 1}`}
                 />
-                <h1 className="absolute bottom-3 -left-4 text-6xl font-bold text-gray-100 bg-black rounded-3xl">
-                  {index + 1}
-                </h1>
               </span>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Modal */}
       {isModalVisible && (
         <>
-          {/* Dimmed background */}
           <div
             className="fixed inset-0 bg-black bg-opacity-75 z-10"
             onClick={closeModalHandler}
           ></div>
 
-          {/* Modal Content */}
           <div
-            className="fixed z-20 h-[680px] w-[480px] bg-white flex items-center justify-center rounded-lg shadow-lg"
+            className="fixed z-20 h-[200px] w-[80px] bg-white flex items-center justify-center rounded-lg shadow-lg"
             style={{
               top: "50%",
-              left: "30%",
+              left: "13%",
               transform: "translate(-50%, -50%)",
             }}
           >
@@ -129,8 +123,8 @@ function Movies({ movies }) {
             </button>
             <div className="text-black text-xl font-bold h-full w-full relative">
               <div className="h-full aspect-video absolute z-10 flex flex-col justify-between">
-                <div className="h-32 bg-gradient-to-b from-black via-black"></div>
-                <div className="h-32 bg-gradient-to-t from-black via-black"></div>
+                <div className="h-8 bg-gradient-to-b from-black via-black"></div>
+                <div className="h-8 bg-gradient-to-t from-black via-black"></div>
               </div>
               {trailer ? (
                 <iframe
