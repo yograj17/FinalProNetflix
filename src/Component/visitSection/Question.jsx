@@ -14,13 +14,13 @@ const Question = () => {
   };
 
   return (
-    <div className="bg-black border-white py-7 px-32 text-white flex flex-col gap-6">
-      <div className="text-3xl font-semibold">Frequently Asked Questions</div>
+    <div className="bg-black border-white  py-6 mx-6 text-white flex flex-col gap-4">
+      <div className="font-semibold text-xl">Frequently Asked Questions</div>
       <div className="flex flex-col gap-4">
         {questionData.map((key, index) => (
           <div className="" key={index}>
             <div
-              className="h-20 flex items-center text-2xl font-semibold justify-between px-8 bg-white bg-opacity-15 hover:bg-opacity-20 cursor-pointer"
+              className="h-16 flex items-center text-xl font-semibold justify-between px-6 bg-white bg-opacity-15 hover:bg-opacity-20 cursor-pointer"
               onClick={() => clickHandler(index)}
             >
               <div>{key.heading}</div>
@@ -33,7 +33,7 @@ const Question = () => {
               </div>
             </div>
             {Arrow[index] == true ? (
-              <div className="bg-white bg-opacity-40 text-2xl p-8 text-black">
+              <div className="bg-white bg-opacity-40 text-xl p-6 text-black">
                 {key.info}
               </div>
             ) : (
