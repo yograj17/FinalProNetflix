@@ -93,7 +93,7 @@ const HeroSection = () => {
             return (
               <div
                 key={key.id}
-                className="border cursor-pointer bg-slate-500 h-44 w-32 inline-block mr-4 bg-cover bg-center opacity-90 rounded-xl"
+                className="border border-gray-500 cursor-pointer bg-slate-500 h-44 w-32 inline-block mr-4 bg-cover bg-center opacity-90 rounded-xl"
                 onClick={() => {
                   setMovieId(key.id);
                   Dispach(AddMoviesInfo(key));

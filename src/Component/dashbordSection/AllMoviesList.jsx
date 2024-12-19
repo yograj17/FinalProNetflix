@@ -17,10 +17,10 @@ const AllMoviesList = () => {
   const TvShowmainData = useSelector((state) => state.moviesData.TvShowmain);
 
   return (
-    <div className="bg-gray-950 mt-24">
-      <div className="p-28 flex flex-col gap-10">
+    <div className="bg-gray-950">
+      <div className="mt-60 flex flex-col gap-2 py-2 px-4">
         <div
-          className="shadow-lg shadow-stone-800 p-6"
+          className="flex flex-col gap-2"
           onClick={() => {
             Dispach(AddScreeningData(NowPlayingMoviesData));
             window.scrollTo({
@@ -29,7 +29,7 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+          <div className="flex justify-between items-center font-semibold text-xl">
             Now Playing Movies
             <span
               className=""
@@ -39,7 +39,7 @@ const AllMoviesList = () => {
                 });
               }}
             >
-              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+              <FaRegArrowAltCircleRight className="h-6 w-8 cursor-pointer" />
             </span>
           </div>
 
@@ -56,7 +56,7 @@ const AllMoviesList = () => {
         </div>
 
         <div
-          className="shadow-lg shadow-stone-800 p-6"
+          className="flex flex-col gap-2"
           onClick={() => {
             Dispach(AddScreeningData(PopularMovies));
             window.scrollTo({
@@ -65,7 +65,7 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+          <div className="flex justify-between items-center font-semibold text-xl">
             Popular Movies
             <span
               className=""
@@ -75,7 +75,7 @@ const AllMoviesList = () => {
                 });
               }}
             >
-              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+              <FaRegArrowAltCircleRight className="h-6 w-8 cursor-pointer" />
             </span>
           </div>
           <div
@@ -89,8 +89,9 @@ const AllMoviesList = () => {
             })}
           </div>
         </div>
+
         <div
-          className="shadow-lg shadow-stone-800 p-6"
+          className="flex flex-col gap-2"
           onClick={() => {
             Dispach(AddScreeningData(TopRatedData));
             window.scrollTo({
@@ -99,7 +100,7 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+          <div className="flex justify-between items-center font-semibold text-xl">
             Top Rated Movies
             <span
               className=""
@@ -109,7 +110,7 @@ const AllMoviesList = () => {
                 });
               }}
             >
-              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+              <FaRegArrowAltCircleRight className="h-6 w-8 cursor-pointer" />
             </span>
           </div>
           <div
@@ -123,8 +124,9 @@ const AllMoviesList = () => {
             })}
           </div>
         </div>
+
         <div
-          className="shadow-lg shadow-stone-800 p-6"
+          className="flex flex-col gap-2"
           onClick={() => {
             Dispach(AddScreeningData(UpcomingData));
             window.scrollTo({
@@ -133,7 +135,7 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className=" text-2xl font-bold mb-8 gap-2  flex justify-between">
+          <div className="flex justify-between items-center font-semibold text-xl">
             Upcoming Movies
             <span
               className=""
@@ -143,7 +145,7 @@ const AllMoviesList = () => {
                 });
               }}
             >
-              <FaRegArrowAltCircleRight className="h-10 w-10 cursor-pointer" />
+              <FaRegArrowAltCircleRight className="h-6 w-8 cursor-pointer" />
             </span>
           </div>
           <div
@@ -157,8 +159,9 @@ const AllMoviesList = () => {
             })}
           </div>
         </div>
+
         <div
-          className="shadow-lg shadow-stone-800 p-6"
+          className="flex flex-col gap-2"
           onClick={() => {
             Dispach(AddScreeningData(TvShowmainData));
             window.scrollTo({
@@ -167,9 +170,8 @@ const AllMoviesList = () => {
             });
           }}
         >
-          <div className=" text-2xl font-bold mb-8 gap-2 flex justify-between">
+          <div className="flex justify-between items-center font-semibold text-xl">
             Tv Show Movies
-            {/* <span className="border-2"></span> */}
           </div>
           <div
             className="whitespace-nowrap overflow-x-scroll scrollbar-hide "
