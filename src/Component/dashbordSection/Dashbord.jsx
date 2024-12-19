@@ -8,7 +8,7 @@ function Dashbord() {
     <div className="h-screen bg-gray-950 text-white">
       <HeroSection />
       <AllMoviesList />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

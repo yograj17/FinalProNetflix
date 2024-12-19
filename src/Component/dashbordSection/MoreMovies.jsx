@@ -57,12 +57,12 @@ const MoreMovies = () => {
   }, []);
 
   return VideoFild ? (
-    <div className="bg-black text-white min-h-screen relative">
-      <div className="py-20">
-        <div className="w-3/4 m-auto flex items-center justify-between px-28">
-          <div className="text-4xl font-bold">{type}</div>
+    <div className=" bg-black text-white min-h-screen relative py-4">
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center justify-between px-4">
+          <div className="text-xl font-semibold">{type}</div>
           <div
-            className="cursor-pointer text-xl font-semibold w-32 h-12 flex justify-center items-center bg-red-500  rounded-lg"
+            className="cursor-pointer flex justify-center items-center h-7 w-20 bg-red-500  rounded-md"
             onClick={() => {
               Naviget("/dashbord");
               Dispach(ClearMovies());
@@ -71,13 +71,13 @@ const MoreMovies = () => {
             Back
           </div>
         </div>
-        <div className="flex flex-wrap justify-center items-center gap-8 w-3/4 m-auto mt-10">
+        <div className=" flex flex-wrap justify-center items-center gap-2 m-auto ">
           {Data?.map((key, index) => (
             <div
               onClick={() => {
                 AllVideosSee(key);
               }}
-              className="rounded-xl w-60 h-80 bg-cover bg-center"
+              className="rounded-xl h-40 w-28 bg-cover bg-center"
               key={index}
               style={{
                 backgroundImage: `url(https://image.tmdb.org/t/p/original/${key.poster_path})`,
@@ -86,17 +86,19 @@ const MoreMovies = () => {
           ))}
         </div>
       </div>
-      <div className=" flex justify-center items-center py-6 gap-4">
-        {[...Array(5)].map((_, index) => (
+
+      <div className="flex justify-center items-center gap-2 mt-2">
+        {[...Array(3)].map((_, index) => (
           <div
             key={index}
-            className="border shimmer h-48 w-52 rounded-lg flex justify-center items-center gap-28"
-            ref={index === 4 ? loadMoreRef : null}
+            className="border shimmer h-32 w-28 rounded-lg flex justify-center items-center gap-28"
+            ref={index === 2 ? loadMoreRef : null}
           >
             <div className="shimmer-text w-20 h-4"></div>
           </div>
         ))}
       </div>
+
       {videoDiv ? (
         <>
           <div className="fixed inset-0 bg-black bg-opacity-80"></div>
