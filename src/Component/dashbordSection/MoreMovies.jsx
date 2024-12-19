@@ -103,7 +103,7 @@ const MoreMovies = () => {
         <>
           <div className="fixed inset-0 bg-black bg-opacity-80"></div>
           <div
-            className="min-h-96 w-1/2 shadow-lg shadow-red-900 bg-black fixed overflow-y-auto py-20"
+            className=" min-h-96 w-4/5 shadow-lg shadow-red-900 bg-black fixed overflow-y-auto py-20"
             style={{
               top: "59%",
               left: "50%",
@@ -113,28 +113,28 @@ const MoreMovies = () => {
             }}
           >
             <span
-              className="absolute right-4 top-4 text-white bg-red-600 h-12 w-28 rounded-lg flex justify-center items-center text-lg font-semibold cursor-pointer"
+              className="absolute top-6 right-6 h-8 w-20 text-white bg-red-600  rounded-lg flex justify-center items-center text-md font-semibold cursor-pointer"
               onClick={() => {
                 setvideoDiv(false);
               }}
             >
               Back
             </span>
-            <div className=""></div>
-            <div className="mt-7 flex flex-col gap-8">
+            {/* <div className=""></div> */}
+            <div className=" flex flex-col gap-2">
               {Videos?.map((key) => (
                 <div
                   key={key.id}
-                  className="border-b-2 h-28 flex justify-between items-center px-20 "
+                  className="border-b-2 pb-2  flex justify-between items-center mx-2"
                 >
-                  <div className="h-28 flex flex-col justify-center text-lg font-semibold">
+                  <div className="flex flex-col justify-center">
                     <div className="">{key.name}</div>
                     <div className="text-green-700">{key.type}</div>
                     <div className="">{key.published_at}</div>
                   </div>
-                  <div className="flex justify-center items-center h-12 cursor-pointer">
+                  <div className="flex justify-center items-center cursor-pointer">
                     <IoIosPlayCircle
-                      className="h-14 w-14"
+                      className="h-10 w-10"
                       onClick={() => {
                         Dispach(AddperticularVideo(key.key));
                         setVideoFild(false);
