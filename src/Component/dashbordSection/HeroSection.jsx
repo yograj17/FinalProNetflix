@@ -43,7 +43,7 @@ const HeroSection = () => {
   useMovies(MovieId, AddMoviesVideo);
 
   return shimmer ? (
-    <div className="h-80 relative">
+    <div className="h-[380px] relative">
       <Navbar />
       <div className="h-full w-full relative">
         <div className="absolute inset-0 z-0">
@@ -63,13 +63,15 @@ const HeroSection = () => {
 
         <div className="absolute inset-0 z-10 flex justify-center items-center bg-transparent">
           <div className="bg-gray-950 text-white h-full w-full bg-opacity-40 flex  relative">
-            <div className="flex flex-col gap-1 opacity-90 absolute bottom-0 bg-gradient-to-t from-gray-950 via-gray-950 p-4">
-              <div className="text-2xl font-extrabold">
+            <div className="flex flex-col gap-2 opacity-90 absolute bottom-0 bg-gradient-to-t from-gray-950 via-gray-950 p-4">
+              <div className="text-2xl font-extrabold text-gray-400">
                 {MoviesInfo?.original_title}
               </div>
-              <div className="h-12 overflow-hidden">{MoviesInfo?.overview}</div>
+              <div className="h-12 overflow-hidden text-gray-400">
+                {MoviesInfo?.overview}
+              </div>
               <div className=" flex gap-2">
-                <div className="border cursor-pointer h-8 w-20 flex justify-center items-center font-bold rounded-md bg-white text-black">
+                <div className="border bg-gray-700 hover:bg-gray-600 text-white cursor-pointer h-8 w-20 flex justify-center items-center font-bold rounded-md ">
                   Play
                 </div>
                 <div className="border cursor-pointer h-8 w-20 flex justify-center items-center font-bold rounded-md">

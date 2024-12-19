@@ -5,7 +5,7 @@ import Footer from "../visitSection/Footer";
 
 function Dashbord() {
   return (
-    <div className="h-screen bg-black text-white">
+    <div className="h-screen bg-gray-950 text-white">
       <HeroSection />
       <AllMoviesList />
       {/* <Footer /> */}

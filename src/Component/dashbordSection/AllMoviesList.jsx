@@ -18,7 +18,7 @@ const AllMoviesList = () => {
 
   return (
     <div className="bg-gray-950">
-      <div className="mt-60 flex flex-col gap-2 py-2 px-4">
+      <div className="mt-56 flex flex-col gap-2 py-2 px-4">
         <div
           className="flex flex-col gap-2"
           onClick={() => {
